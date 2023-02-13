@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/test',function(req,res){
+  req.sql("SELECT 1",[],(err,result,fields)=>{
+    res.send(result);
+  });
+})
+
 module.exports = router;
